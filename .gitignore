@@ -1,0 +1,69 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+jspm_packages/
+typings/
+
+# Build and Output
+dist/
+build/
+bin/
+obj/
+out/
+.parcel-cache
+.cache
+.eslintcache
+
+# Debug and Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs
+*.swp
+*.bak
+
+# IDE & Editor Specific
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS Specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Local Environment & Secrets
+.env
+.env*.local
+.env.sample
+.env.development.local
+.env.test.local
+.env.production.local
+auth.json
+
+# Tool Specific
+.history/
+.pnpm-debug.log
+.npm
+.yarn
+.pnpm-lock.yaml
+
+# Antigravity/Agent Artifacts
+.gemini/
+brain/
+implementation_plan.md
+walkthrough.md
+task.md

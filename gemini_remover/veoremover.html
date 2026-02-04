@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeoRemover - Coming Soon</title>
+    <meta name="description"
+        content="VeoRemover is coming soon. The world's first AI-powered video watermark remover for Gemini Veo content.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/webp" href="img/logo.webp">
+    <style>
+        .coming-soon-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(circle at top center, rgba(30, 30, 30, 0.4), var(--obsidian));
+        }
+
+        .teaser-content {
+            max-width: 800px;
+        }
+
+        .teaser-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .waitlist-container {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .waitlist-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            width: 300px;
+            max-width: 100%;
+        }
+
+        .waitlist-input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+
+<body class="dashboard-layout">
+    <header class="top-header">
+        <div class="header-brand">
+            <img src="img/logo.webp" alt="GemRemover" class="brand-logo" onerror="this.style.display='none'">
+            <div class="brand-text">Gem<span class="accent">Remover</span></div>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="top-nav" id="topNav">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="gemremover.html" class="nav-item">GemRemover</a>
+            <a href="veoremover.html" class="nav-item active">VeoRemover</a>
+            <a href="pricing.html" class="nav-item">Pricing</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact Us</a>
+        </nav>
+
+        <div class="header-cta">
+            <a href="gemremover.html" class="btn primary cta-glow text-decoration-none">Get Started</a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="story-section bg-nano-hero">
+            <div class="overlay-darker"></div>
+            <div class="story-content coming-soon-hero">
+                <div class="teaser-content">
+                    <span class="teaser-badge">Under Development</span>
+                    <h1 class="hero-title" style="font-size: 4rem; margin-bottom: 1.5rem;">Veo<span
+                            class="gold-gradient">Remover</span></h1>
+                    <p class="hero-sub">
+                        The future of video restoration is being forged. <br>
+                        AI-powered temporal watermark removal for Gemini Veo generation.
+                    </p>
+
+                    <form class="waitlist-form waitlist-container">
+                        <input type="email" class="waitlist-input" placeholder="Enter your email for early access"
+                            required>
+                        <button type="submit" class="btn primary cta-glow waitlist">Notify Me</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="brand-text" style="font-size: 1rem; opacity: 0.5;">Gem<span class="accent">Remover</span> &copy;
+                2026</div>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

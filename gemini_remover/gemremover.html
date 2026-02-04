@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GemRemover - AI Watermark Removal Tool</title>
+    <meta name="description"
+        content="Access the GemRemover tool to instantly remove Nano Banana, Gemini, and Veo watermarks with AI precision.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/webp" href="img/logo.webp">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style>
+        /* Specific overrides for the dedicated tool page */
+        body {
+            background-color: var(--obsidian);
+            overflow-x: hidden;
+        }
+
+        .tool-page-wrapper {
+            padding-top: var(--header-height);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-fullscreen-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+    </style>
+</head>
+
+<body class="dashboard-layout">
+    <header class="top-header">
+        <div class="header-brand">
+            <img src="img/logo.webp" alt="GemRemover" class="brand-logo" onerror="this.style.display='none'">
+            <div class="brand-text">Gem<span class="accent">Remover</span></div>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="top-nav" id="topNav">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="gemremover.html" class="nav-item active">GemRemover</a>
+            <a href="veoremover.html" class="nav-item">VeoRemover</a>
+            <a href="pricing.html" class="nav-item">Pricing</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact Us</a>
+        </nav>
+
+        <div class="header-cta">
+            <a href="#gemremover" class="btn primary cta-glow text-decoration-none">Get Started</a>
+        </div>
+    </header>
+
+    <main class="main-content tool-page-wrapper">
+        <!-- Reusing "bg-nano-hero" for consistency -->
+        <section id="gemremover" class="story-section bg-nano-hero tool-fullscreen-section">
+            <div class="overlay-darker"></div>
+            <div class="story-content tool-layout">
+                <div class="tool-header-area">
+                    <h2 class="luxury-title">Restoration <span class="gold-gradient">Console</span></h2>
+                    <p>Upload your media to begin the neural cleaning process.</p>
+                </div>
+
+                <!-- EXISTING TOOL STRUCTURE PRESERVED -->
+                <div class="drop-container">
+                    <div class="drop-zone" id="dropZone">
+                        <div class="drop-zone-content">
+                            <div class="icon-circle">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                    stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                            </div>
+                            <h2 class="luxury-text">Import Gemini Vision</h2>
+                            <p>Drag your files here or <span class="accent">click to browse</span></p>
+                            <div class="batch-support">
+                                <span class="dot"></span>
+                                Supports JPG, PNG, and WebP
+                            </div>
+                        </div>
+                        <input type="file" id="fileInput" multiple accept="image/*" hidden>
+                    </div>
+                </div>
+
+                <div id="processingArea" class="processing-area hidden">
+                    <div class="processing-header">
+                        <h2 id="statusTitle">Analyzing Neural Patterns...</h2>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                    </div>
+
+                    <div class="result-display">
+                        <div class="comparison-container" id="singleResultView">
+                            <div class="comparison-slider" id="comparisonSlider">
+                                <div class="image-wrapper" id="imageWrapper">
+                                    <img src="" alt="Original" id="originalImage">
+                                    <img src="" alt="Cleaned" id="cleanedImage">
+                                    <div class="slider-handle">
+                                        <div class="handle-circle">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="3">
+                                                <polyline points="15 18 9 12 15 6"></polyline>
+                                            </svg>
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="3">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="comparison-labels">
+                                <span>RESTORATION START</span>
+                                <span>AI PERFECTED</span>
+                            </div>
+                        </div>
+
+                        <div class="batch-results hidden" id="batchResultsView">
+                            <div class="results-grid" id="resultsGrid">
+                                <!-- Processed items will appear here -->
+                            </div>
+                            <div class="batch-actions">
+                                <button id="downloadAllBtn" class="btn primary full-width">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    Export Vault (.zip)
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="action-panel">
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="label">Neural Precision</span>
+                                    <span class="value" id="detectInfo">99.8%</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="label">Resolution Engine</span>
+                                    <span class="value" id="statusInfo">8K VISION</span>
+                                </div>
+                            </div>
+                            <div class="button-group">
+                                <button id="downloadBtn" class="btn primary">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    Save Masterwork
+                                </button>
+                                <button id="resetBtn" class="btn secondary">New Restoration</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="brand-text" style="font-size: 1rem; opacity: 0.5;">Gem<span class="accent">Remover</span> &copy;
+                2026</div>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

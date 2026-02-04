@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - GemRemover Elite Membership</title>
+    <meta name="description"
+        content="GemRemover Pricing: Choose your plan for expert AI watermark removal. Gemini, Veo, and Nano Banana optimized restoration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/webp" href="img/logo.webp">
+</head>
+
+<body class="dashboard-layout">
+    <header class="top-header">
+        <div class="header-brand">
+            <a href="index.html"
+                style="text-decoration: none; display: flex; align-items: center; gap: 12px; color: inherit;">
+                <img src="img/logo.webp" alt="GemRemover" class="brand-logo" onerror="this.style.display='none'">
+                <div class="brand-text">Gem<span class="accent">Remover</span></div>
+            </a>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+
+        <nav class="top-nav" id="topNav">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="gemremover.html" class="nav-item">GemRemover</a>
+            <a href="veoremover.html" class="nav-item">VeoRemover</a>
+            <a href="pricing.html" class="nav-item active">Pricing</a>
+            <a href="about.html" class="nav-item">About Us</a>
+            <a href="contact.html" class="nav-item">Contact Us</a>
+        </nav>
+
+        <div class="header-cta">
+            <a href="index.html#gemremover" class="btn primary cta-glow" style="text-decoration: none;">Get Started</a>
+        </div>
+    </header>
+
+    <main class="main-content pricing-page">
+        <div class="pricing-bg-visual"></div>
+        <div class="pricing-overlay"></div>
+
+        <section class="pricing-content">
+            <header class="section-header">
+                <h1 class="hero-title">Elite <span class="gold-gradient">Membership</span></h1>
+                <p class="hero-intro">Unlock unrestricted neural restoration and high-speed AI processing.</p>
+            </header>
+
+            <div class="membership-grid">
+                <!-- Free Tier -->
+                <div class="membership-card basic">
+                    <div class="plan-header">
+                        <h2 class="plan-name">Creative</h2>
+                        <div class="plan-price">₹0 <span class="period">/ forever</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>5 images per neural batch</li>
+                        <li>Standard restoration speed</li>
+                        <li>Export in optimized WebP format</li>
+                        <li>Basic Gemini watermark removal</li>
+                    </ul>
+                    <button class="btn secondary full-width">Active Tier</button>
+                </div>
+
+                <!-- Paid Tier -->
+                <div class="membership-card premium">
+                    <div class="best-value-badge">EXCELLENCE</div>
+                    <div class="plan-header">
+                        <h2 class="plan-name">Artisan Pro</h2>
+                        <div class="plan-price">₹99 <span class="period">/ month</span></div>
+                    </div>
+                    <ul class="plan-features">
+                        <li>Unlimited batch processing</li>
+                        <li>Nitro ⚡ neural speed</li>
+                        <li>Export in RAW and Lossless PNG</li>
+                        <li>Advanced AI pattern access</li>
+                        <li>Gemini watermark remover</li>
+                        <li>Gemini Veo watermark remover</li>
+                        <li>Nano Banana watermark remover</li>
+                        <li>Image and video watermark removal</li>
+                    </ul>
+                    <button class="btn primary full-width cta-glow"
+                        style="box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);">Ascend Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <div class="brand-text" style="font-size: 1rem; opacity: 0.5;">Gem<span class="accent">Remover</span> &copy;
+                2026</div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            document.getElementById('topNav').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
